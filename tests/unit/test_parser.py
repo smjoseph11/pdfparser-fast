@@ -19,7 +19,7 @@ def test_parse_pdf_success():
     """This test ensures we can create the appropriate Page objects associated with a Document"""
     with PDFService(TEST_DATA / "Test_PDF_2p.pdf") as pdfservice:
         document_record = pdfservice.create_document()
-        document_record.pdf_id = 1
+        document_record.id = 1
         list_of_pages = pdfservice.parse_pdf(document_record)
         # ensure page number starts at 1
         assert list_of_pages[0].page_number == 1
@@ -34,7 +34,7 @@ def test_parse_page_word_success():
     # Create an instance of PDFService
     with PDFService(TEST_DATA / "Test_PDF_2p.pdf") as pdfservice:
         document_record = pdfservice.create_document()
-        document_record.pdf_id = 1
+        document_record.id = 1
         list_of_pages = pdfservice.parse_pdf(document_record)
         page1 = list_of_pages[0]
         page1.page_id = 1

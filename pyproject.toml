@@ -16,6 +16,8 @@ flask = "^3.0.3"
 sqlalchemy = "^2.0.29"
 pathlib = "^1.0.1"
 requests = "^2.31.0"
+pydantic = "^2.6.4"
+sqlmodel = "^0.0.16"
 
 [build-system]
 requires = ["poetry-core"]

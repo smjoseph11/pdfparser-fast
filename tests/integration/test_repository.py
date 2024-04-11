@@ -1,6 +1,5 @@
 from pathlib import Path
-
-from pdfparser.model import Document, Page
+from pdfparser.sqlmodel import Document, Page
 from pdfparser.services import PDFService
 
 TEST_DATA = Path(__file__).parent.parent / "test_data"

@@ -1,6 +1,6 @@
 import fitz
 
-from pdfparser import model
+from pdfparser import sqlmodel as model
 
 
 class PDFService:
@@ -22,7 +22,7 @@ class PDFService:
                 text = page.get_text()
                 # fulfills requirement to remove newlines on page text
                 text = text.replace("\n", " ")
-                page_record = model.Page(pdf_id=document.pdf_id, page_number=page_number + 1, page_text=text)
+                page_record = model.Page(pdf_id=document.id, page_number=page_number + 1, page_text=text)
                 page_list.append(page_record)
             return page_list
         except Exception as e:

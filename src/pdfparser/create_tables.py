@@ -1,5 +1,5 @@
-from sqlalchemy import create_engine
-
+from sqlmodel import create_engine, SQLModel
+from pdfparser import model
 from pdfparser import config
 from pdfparser.orm import Base
 
@@ -8,7 +8,7 @@ from pdfparser.orm import Base
 # Create a database engine
 engine = create_engine(config.get_postgres_uri())
 
-# Create all tables defined in the Base
-Base.metadata.create_all(engine)
+# Create all tables
+SQLModel.metadata.create_all(engine)
 
 print("Tables created successfully!")

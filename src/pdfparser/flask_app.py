@@ -1,9 +1,9 @@
 from flask import Flask, jsonify, request
-from sqlalchemy import create_engine
+from sqlmodel import create_engine, SQLModel
+from pdfparser import sqlmodel
 from sqlalchemy.orm import sessionmaker
 
 from pdfparser import config
-from pdfparser.orm import Base
 from pdfparser.services import PDFService
 
 app = Flask(__name__)
@@ -18,7 +18,7 @@ def parse_pdf():
 
     file_path = data["file_path"]
     engine = create_engine(config.get_postgres_uri())
-    Base.metadata.create_all(engine)
+    SQLModel.metadata.create_all(engine)
     Session.configure(bind=engine)
     session = Session()
     try:
