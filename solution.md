@@ -1,5 +1,5 @@
 ---
-name: "\U0001F41E Solution log/process"
+name: "Solution log/process"
 about: This documents my thought processes and solutions to the exercise
 ---
 
