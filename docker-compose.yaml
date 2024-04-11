@@ -1,0 +1,20 @@
+version: '2'
+services:
+    postgres:
+        image: postgres
+        ports:
+            - "5432:5432"
+        environment:
+          - POSTGRES_USER=fake_user
+          - POSTGRES_HOST=fake_host
+          - POSTGRES_PASSWORD=fake_password
+          - POSTGRES_DB=docs
+        volumes:
+            - ./schema.sql:/docker-entrypoint-initdb.d/10-schema.sql
+    web:
+        build: '.'
+        ports:
+            - '5000:5000'
+        depends_on:
+        - postgres
+       

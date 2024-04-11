@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" modified="2024-04-08T23:45:20.903Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="XKS5C8O2paJjsxzRmRVL" version="24.2.3" type="device">
+  <diagram name="Page-1" id="POVSPA9YHGugkE-1P2fP">
+    <mxGraphModel dx="1014" dy="666" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ixsWBhXA_DZxbiGwg1I6-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ixsWBhXA_DZxbiGwg1I6-1" target="ixsWBhXA_DZxbiGwg1I6-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ixsWBhXA_DZxbiGwg1I6-1" value="&amp;lt;&amp;lt;System&amp;gt;&amp;gt;&lt;div&gt;PDF Parsing&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Parses PDF documents so AI can easily read them&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="260" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ixsWBhXA_DZxbiGwg1I6-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ixsWBhXA_DZxbiGwg1I6-2" target="ixsWBhXA_DZxbiGwg1I6-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ixsWBhXA_DZxbiGwg1I6-2" value="&amp;lt;&amp;lt;Person&amp;gt;&amp;gt;&lt;div&gt;Provider&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Wants to add notes for a patient&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Wants form fields and codes filled automatically&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="590" y="60" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ixsWBhXA_DZxbiGwg1I6-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="ixsWBhXA_DZxbiGwg1I6-5" target="ixsWBhXA_DZxbiGwg1I6-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ixsWBhXA_DZxbiGwg1I6-5" value="&amp;lt;&amp;lt;System&amp;gt;&amp;gt;&lt;div&gt;Interpretation&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Fills billing entry based on data received&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="180" y="450" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ixsWBhXA_DZxbiGwg1I6-9" value="This is the piece of the Domain Model I am constructing" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;direction=north;" vertex="1" parent="1">
+          <mxGeometry x="215" y="170" width="125" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ixsWBhXA_DZxbiGwg1I6-11" value="Notifies provider of completed entry" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="470" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ixsWBhXA_DZxbiGwg1I6-12" value="Sends to" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ixsWBhXA_DZxbiGwg1I6-15" value="Notifies AI of DB Update" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="380" width="90" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
