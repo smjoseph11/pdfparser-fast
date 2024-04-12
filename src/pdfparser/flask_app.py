@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from sqlmodel import create_engine, SQLModel
+from sqlmodel import create_engine, SQLModel, Session
 from pdfparser import sqlmodel
 from sqlalchemy.orm import sessionmaker
 

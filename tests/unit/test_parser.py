@@ -37,7 +37,7 @@ def test_parse_page_word_success():
         document_record.id = 1
         list_of_pages = pdfservice.parse_pdf(document_record)
         page1 = list_of_pages[0]
-        page1.page_id = 1
+        page1.id = 1
 
         bounding_boxes = pdfservice.parse_page(page1)
 

@@ -44,6 +44,3 @@ def test_parse_pdf_missing_file_path(client):
 
     # Check the response message
     assert response.json["message"] == "File path and PDF ID are required"
-
-
-# Add more test cases as needed
