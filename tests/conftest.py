@@ -1,7 +1,9 @@
 import pytest
-from sqlmodel import create_engine, SQLModel
-from pdfparser import sqlmodel
 from sqlalchemy.orm import sessionmaker
+from sqlmodel import SQLModel, create_engine
+
+from pdfparser import model
+
 
 # Creating an in-memory sqlite db for testing
 @pytest.fixture(scope="function")

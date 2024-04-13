@@ -1,5 +1,5 @@
-from sqlmodel import create_engine, SQLModel
-from pdfparser import model
+from pdfparser.model import SQLModel, create_engine
+
 from pdfparser import config
 from pdfparser.orm import Base
 

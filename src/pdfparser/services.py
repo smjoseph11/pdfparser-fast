@@ -1,6 +1,6 @@
 import fitz
 
-from pdfparser import sqlmodel as model
+from pdfparser import model
 
 
 class PDFService:
