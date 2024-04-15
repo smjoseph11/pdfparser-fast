@@ -44,6 +44,12 @@ python3.10
 9. I then created a Dockerfile to containerize my application. I set some configurations up, install poetry, install dependencies, copy over working directories, and finally run my application
 10. I then added a web service to the docker-compose for my application
 
+----------------------------------------------
+# Modifications
+
+1. In the first iteration of this MVP, my models were not typed. To remedy this I added the SQLModel library to the code stack. 
+2. I also created a new flask endpoint to print_page given a document name and a page number
+
 To run the containerized application:
 ```
 docker-compose build
