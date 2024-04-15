@@ -2,15 +2,14 @@ version: '2'
 services:
     postgres:
         image: postgres
+        restart: always
         ports:
             - "5432:5432"
         environment:
+          - POSTGRES_DB=docs
           - POSTGRES_USER=fake_user
           - POSTGRES_HOST=fake_host
           - POSTGRES_PASSWORD=fake_password
-          - POSTGRES_DB=docs
-        volumes:
-            - ./schema.sql:/docker-entrypoint-initdb.d/10-schema.sql
     web:
         build: '.'
         ports:

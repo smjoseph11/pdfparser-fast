@@ -36,4 +36,4 @@ ENV PYTHONPATH=/app/src
 
 
 # Run your application
-CMD ["sh", "-c", "poetry run python src/pdfparser/flask_app.py && python src/pdfparser/create_tables.py"]
+CMD ["sh", "-c", "poetry run python src/pdfparser/flask_app.py"]

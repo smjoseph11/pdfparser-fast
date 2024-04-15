@@ -10,10 +10,14 @@ def test_create_document_success():
     count the pages, and create a Document object"""
     with PDFService(TEST_DATA / "Test_PDF.pdf") as pdfservice:
         document_record = pdfservice.create_document()
-        print(document_record.document_name)
         assert document_record.document_name == "Test_PDF"
         assert document_record.total_pages == 1
-
+def test_create_document_success_no_title():
+    """This test ensures if we can read metadata from a pdf,
+    count the pages, and create a Document object"""
+    with PDFService(TEST_DATA / "Test_PDF_2p.pdf") as pdfservice:
+        document_record = pdfservice.create_document()
+        assert document_record.document_name == "Untitled_doc"
 
 def test_parse_pdf_success():
     """This test ensures we can create the appropriate Page objects associated with a Document"""

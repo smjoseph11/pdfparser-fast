@@ -13,8 +13,8 @@ def test_load_document_into_sqlite_db(session):
         document = pdfparser.create_document()
     session.add(document)
     session.commit()
-    document = session.query(Document).first()
     assert document.document_name == "Test_PDF"
+    assert document.id == 1
 
 
 def test_load_pages_from_a_document(session):
@@ -24,9 +24,11 @@ def test_load_pages_from_a_document(session):
         document = pdfparser.create_document()
         session.add(document)
         session.commit()
+
         list_of_pages = pdfparser.parse_pdf(document)
         assert len(list_of_pages) == 2
         assert list_of_pages[0].page_text.strip() == "Test PDF with 2 pages"
+        assert list_of_pages[0].document_id == 1
 
 
 def test_load_bounding_boxes_from_page(session):
@@ -42,3 +44,4 @@ def test_load_bounding_boxes_from_page(session):
         page = session.query(Page).filter_by(page_number=1).first()
         bounding_boxes = pdfparser.parse_page(page)  # parsing the first page
         bounding_boxes[0].word_text = "Test"
+        bounding_boxes[0].page_id = 1

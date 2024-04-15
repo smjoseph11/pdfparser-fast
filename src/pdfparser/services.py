@@ -10,7 +10,10 @@ class PDFService:
 
     def create_document(self):
         total_pages = self.pdf_document.page_count
-        document_name = self.pdf_document.metadata.get("title", "Untitled")
+
+        document_name = self.pdf_document.metadata.get("title")
+        if not document_name:
+            document_name = "Untitled_doc"
         document_record = model.Document(document_name=document_name, total_pages=total_pages)
         return document_record
 
@@ -22,7 +25,7 @@ class PDFService:
                 text = page.get_text()
                 # fulfills requirement to remove newlines on page text
                 text = text.replace("\n", " ")
-                page_record = model.Page(pdf_id=document.id, page_number=page_number + 1, page_text=text)
+                page_record = model.Page(document_id=document.id, page_number=page_number + 1, page_text=text)
                 page_list.append(page_record)
             return page_list
         except Exception as e:
@@ -40,7 +43,7 @@ class PDFService:
             # Create BoundingBox instances for each word and add to the list
             bounding_boxes.append(
                 model.BoundingBox(
-                    word_text=word_text, x=word_bbox.x0, y=word_bbox.y0, width=word_bbox.width, height=word_bbox.height
+                    page_id=page.id, word_text=word_text, x=word_bbox.x0, y=word_bbox.y0, width=word_bbox.width, height=word_bbox.height
                 )
             )
         return bounding_boxes

@@ -2,7 +2,7 @@ from pathlib import Path
 from unittest.mock import MagicMock
 
 import pytest
-
+from pdfparser. model import Document, Page
 from pdfparser import config
 from pdfparser.flask_app import app
 
@@ -21,8 +21,6 @@ def test_parse_pdf_success(client, session, monkeypatch):
     """Test parsing a PDF successfully."""
     # Create a sample request data
     data = {"file_path": str(TEST_DATA / "Test_PDF_2p.pdf")}
-    mock_sessionmaker = MagicMock(return_value=session)
-    monkeypatch.setattr("pdfparser.flask_app.sessionmaker", mock_sessionmaker)
     # Send a POST request to the endpoint with sample data
     monkeypatch.setattr(config, "get_postgres_uri", lambda: "sqlite://")
     response = client.post("/parse_pdf", json=data)
@@ -43,4 +41,22 @@ def test_parse_pdf_missing_file_path(client):
     assert response.status_code == 400
 
     # Check the response message
-    assert response.json["message"] == "File path and PDF ID are required"
+    assert response.json["message"] == "File path required"
+
+def test_print_page_success(client, session, engine, monkeypatch):
+    """Test printing a page from a PDF successfully."""
+    data = {"document_name": "SampleDocument"}  
+    # Send a GET request to the endpoint with sample data
+    document = Document(id=1, document_name="SampleDocument", total_pages=10)
+    session.add(document)
+    session.add(Page(page_number=1, page_text="hello", document_id=1, document=document))
+    session.commit()
+    monkeypatch.setattr("pdfparser.flask_app.engine", engine)
+    response = client.get("/print_page", json=data, query_string={"page_number": 1})
+    
+    # Check that the response status code is 200 (OK)
+    assert response.status_code == 200
+
+    # Check the response content
+    assert "content" in response.json  # Assuming the response contains the page content
+    assert response.json["content"] == "hello"

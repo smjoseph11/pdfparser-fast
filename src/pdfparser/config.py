@@ -1,6 +1,5 @@
 import os
 
-
 def get_postgres_uri():
     host = "postgres"
     port = 5432
