@@ -29,7 +29,7 @@ python3.10
 
 3. I can now run `poetry run pre-commit run --all-files` to check the formatting of files regularly. If this was a true dev environment I would create a git hook with `poetry run pre-commit install` to run black, isort, mypy, and flake8 checks before commiting code into a repo
 
-4. Based on the provided domain expectations, I create a domain model with Python classes. These classes are the Document, Page, Word, and BoundingBox classes. 
+4. Based on the provided domain expectations, I create a domain model with Python classes. These classes are the Document, Page, and BoundingBox classes. 
 
 5. I don't like to entangle SQLAlchemy with my models (I learned from the CosmicPython pattern) so I use the SQLAlchemy mapper functionality to map my Python models to SQLAlchemy classes in the orm.py file
 

@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["David Walling <david@alaffia.io>"]
 readme = "README.md"
-packages = [{include = "src/pdfparser"}]
+packages = [{include = "pdfparser", from="src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -16,6 +16,8 @@ flask = "^3.0.3"
 sqlalchemy = "^2.0.29"
 pathlib = "^1.0.1"
 requests = "^2.31.0"
+fastapi = "^0.110.2"
+uvicorn = {extras = ["standard"], version = "^0.29.0"}
 
 [build-system]
 requires = ["poetry-core"]
@@ -25,8 +27,5 @@ build-backend = "poetry.core.masonry.api"
 addopts = [
     "--import-mode=importlib",
     "--tb=short"
-]
-pythonpath = [
-  "src"
 ]
 filterwarnings = "ignore::DeprecationWarning"
